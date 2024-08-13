@@ -10,14 +10,14 @@
   ],
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "commit": "cz",
-    "prepare": "husky",
+    "build": "rollup -c",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
-    "format": "prettier --write .",
-    "rollup": "rollup -c"
+    "chromatic": "npx chromatic --project-token=chpt_c6b187fd0b0bf4a",
+    "commit": "cz",
+    "prepare": "husky install",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -37,6 +37,7 @@
     "@rollup/plugin-typescript": "^11.1.6",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "@storybook/addon-a11y": "^8.2.9",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
@@ -70,9 +71,11 @@
     "rollup-plugin-postcss": "^4.0.2",
     "semantic-release": "^24.0.0",
     "storybook": "^8.2.9",
+    "storybook-dark-mode": "^4.0.2",
     "tailwind-merge": "^2.5.2",
     "tailwindcss": "^3.4.9",
-    "vite": "^5.4.0"
+    "vite": "^5.4.0",
+    "vite-tsconfig-paths": "^5.0.1"
   },
   "config": {
     "commitizen": {
