@@ -11,7 +11,6 @@ export const buttonStyles = cva(
     "flex",
     "items-center",
     "gap-3",
-    ,
   ],
   {
     variants: {
