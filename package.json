@@ -16,7 +16,8 @@
     "build-storybook": "storybook build",
     "commit": "cz",
     "prepare": "husky install",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "chromatic": "npx chromatic --project-token=chpt_6a44b0e29d190a4"
   },
   "keywords": [],
   "author": "",
