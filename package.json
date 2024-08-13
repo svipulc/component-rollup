@@ -14,7 +14,6 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_c6b187fd0b0bf4a",
     "commit": "cz",
     "prepare": "husky install",
     "format": "prettier --write ."
