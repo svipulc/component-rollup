@@ -12,7 +12,6 @@ export const buttonStyles = cva(
     "items-center",
     "gap-3",
     ,
-    ,
   ],
   {
     variants: {
