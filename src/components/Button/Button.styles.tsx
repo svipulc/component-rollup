@@ -1,8 +1,7 @@
-import { cva } from "class-variance-authority";
-import type { ClassProp } from "class-variance-authority/dist/types";
+import { cva, VariantProps } from "class-variance-authority";
+import { type ClassProp } from "class-variance-authority/dist/types";
 import "tailwindcss/tailwind.css";
-export type ButtonStyles = typeof buttonStyles;
-export type ButtonCvaClassProp = ClassProp;
+export type classProp = ClassProp;
 export const buttonStyles = cva(
   [
     "w-full",
@@ -40,3 +39,6 @@ export const buttonStyles = cva(
     },
   }
 );
+export type ButtonVariants = VariantProps<ButtonStyles>;
+
+export type ButtonStyles = typeof buttonStyles;
