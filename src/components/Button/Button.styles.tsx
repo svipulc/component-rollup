@@ -1,5 +1,6 @@
 import { cva } from "class-variance-authority";
 import type { ClassProp } from "class-variance-authority/dist/types";
+import "tailwindcss/tailwind.css";
 export type ButtonStyles = typeof buttonStyles;
 export type ButtonCvaClassProp = ClassProp;
 export const buttonStyles = cva(
