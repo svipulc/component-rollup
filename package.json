@@ -1,6 +1,6 @@
 {
   "name": "evoke-ui-library",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -10,6 +10,7 @@
   ],
   "type": "module",
   "scripts": {
+    "dev": "vite",
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "cz",
     "prepare": "husky",

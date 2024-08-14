@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 import { BsPersonFillAdd } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
 import { Button } from "./Button";

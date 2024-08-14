@@ -1,5 +1,6 @@
 import { cva } from "class-variance-authority";
 
+export type ButtonStyles = typeof buttonStyles;
 export const buttonStyles = cva(
   [
     "w-full",

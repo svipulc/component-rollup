@@ -1,10 +1,10 @@
 import { VariantProps } from "class-variance-authority";
 import { ComponentProps } from "react";
 import { cn } from "../../utils";
-import { buttonStyles } from "./Button.styles";
+import { ButtonStyles, buttonStyles } from "./Button.styles";
 
 export type ButtonProps = ComponentProps<"button"> &
-  VariantProps<typeof buttonStyles> & {
+  VariantProps<ButtonStyles> & {
     asChild?: boolean;
   };
 
