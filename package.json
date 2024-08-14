@@ -1,24 +1,24 @@
 {
   "name": "evoke-ui-library",
-  "version": "1.0.0",
-  "private": "false",
+  "version": "1.0.2",
   "description": "",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "/dist"
   ],
   "type": "module",
   "scripts": {
-    "build": "rollup -c",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "cz",
+    "prepare": "husky",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "commit": "cz",
-    "prepare": "husky install",
+    "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write .",
-    "chromatic": "npx chromatic --project-token=chpt_6a44b0e29d190a4"
+    "rollup": "rollup -c",
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",
@@ -76,6 +76,7 @@
     "tailwind-merge": "^2.5.2",
     "tailwindcss": "^3.4.9",
     "vite": "^5.4.0",
+    "vite-plugin-dts": "^4.0.2",
     "vite-tsconfig-paths": "^5.0.1"
   },
   "config": {
@@ -88,5 +89,8 @@
       "npm run lint",
       "prettier --write"
     ]
+  },
+  "peerDependencies": {
+    "react": "^18.3.1"
   }
 }
