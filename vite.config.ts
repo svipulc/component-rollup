@@ -7,29 +7,42 @@
 // });
 
 // <reference types="vitest" />
-import autoprefixer from "autoprefixer";
-import tailwindcss from "tailwindcss";
+
+import react from "@vitejs/plugin-react-swc";
+import { resolve } from "path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { peerDependencies } from "./package.json";
+
 export default defineConfig({
+  plugins: [
+    react(),
+    dts({
+      insertTypesEntry: true,
+      staticImport: true,
+      outDir: "dist/types",
+    }),
+  ],
   build: {
     lib: {
-      entry: "./src/index.ts", // Specifies the entry point for building the library.
-      name: "vite-react-ts-button", // Sets the name of the generated library.
-      fileName: format => `index.${format}.js`, // Generates the output file name based on the format.
-      formats: ["cjs", "es"], // Specifies the output formats (CommonJS and ES modules).
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "evoke-ui",
+      formats: ["es", "cjs"],
+      fileName: format => `${format}/index.js`,
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies)], // Defines external dependencies for Rollup bundling.
+      external: [...Object.keys(peerDependencies)],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+          "class-variance-authority": "classVarianceAuthority",
+        },
+      },
     },
-    sourcemap: true, // Generates source maps for debugging.
-    emptyOutDir: true, // Clears the output directory before building.
+    sourcemap: true,
   },
-  css: {
-    postcss: {
-      plugins: [tailwindcss, autoprefixer],
-    },
+  resolve: {
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
-  plugins: [dts()], // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
 });

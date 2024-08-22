@@ -1,24 +1,39 @@
 import { cva } from "class-variance-authority";
-import "tailwindcss/tailwind.css";
 
-export const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md font-medium transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-blue-500 text-white hover:bg-blue-600",
+export const buttonStyles = cva(
+  [
+    "w-full",
+    "rounded-md",
+    "font-semibold",
+    "focus:outline-none",
+    "disabled:opacity-50",
+    "disabled:cursor-not-allowed",
+    "flex",
+    "items-center",
+    "gap-3",
+  ],
   {
     variants: {
       variant: {
-        primary: "bg-blue-500 text-white hover:bg-blue-600",
-        secondary: "bg-gray-500 text-white hover:bg-gray-600",
-        outline: "bg-transparent border border-gray-500 text-gray-500 hover:bg-gray-100",
+        solid:
+          "dark:bg-secondary dark:hover:bg-secondary/90 dark:text-primary bg-primary hover:bg-primary/90  text-white",
+        outline:
+          "dark:border-secondary dark:text-secondary dark:hover:bg-secondary/10 border-primary bg-transparent hover:bg-primary/10 border-2",
+        ghost:
+          "dark:text-secondary dark:hover:bg-secondary/10 transition-colors duration-300  hover:bg-primary/10",
+        link: "dark:text-secondary bg-transparent underline-offset-4 hover:underline cursor-pointer",
+        destructive: "bg-red-600 hover:bg-red-700/90 text-white",
       },
       size: {
-        small: "px-3 py-1.5 text-sm",
-        medium: "px-4 py-2 text-base",
-        large: "px-6 py-3 text-lg",
+        sm: "px-4 py-2 text-sm",
+        md: "px-4 py-2 text-base",
+        lg: "px-6 py-3 text-lg",
+        icon: "p-2",
       },
     },
     defaultVariants: {
-      variant: "primary",
-      size: "medium",
+      variant: "solid",
+      size: "md",
     },
   }
 );
